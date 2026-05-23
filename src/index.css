@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --orange: #F5A623;
+  --green: #1A5C28;
+
+  --height-base: 675px;
+  --width-base: 540px;
+}
+
+@theme inline {
+  --color-orange: var(--orange);
+  --color-green: var(--green);
+  --font-sans: 'Raleway', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f9fafb;
+}
+
+#root {
+  min-height: 100vh;
+}
