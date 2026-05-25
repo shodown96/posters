@@ -17,7 +17,7 @@ export const Poster = forwardRef<HTMLDivElement, IndividualPosterProps>(
           <CAIFLogo className='h-15!' />
         </div>
         <div className="z-10 flex justify-center -mt-5">
-          <div className="size-115">
+          <div className="size-80">
             <div className='size-full bg-white rounded-full- overflow-hidden border-none outline-none'>
               {photo ? (
                 <img
@@ -45,7 +45,7 @@ export const Poster = forwardRef<HTMLDivElement, IndividualPosterProps>(
             </div>
           </div>
         </div>
-        <div className="bg-green h-70 w-135 -mt-35 z-50 relative p-4 bg-no-repeat bg-cover bg-center" style={{
+        <div className="bg-green h-70 w-135 z-50 relative p-4 bg-no-repeat bg-cover bg-center" style={{
           backgroundImage: "url('/bg-green-textured.png')"
         }}>
           <div className='mb-6'>Find me where ideas are in Motion</div>

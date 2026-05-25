@@ -67,7 +67,7 @@ export function PosterPreview({ type, photo, name, title, onBack }: PosterPrevie
 
       {/* Off-screen full-size poster used only for html2canvas capture */}
       <div
-        style={{ position: 'absolute', left: '-9999px', top: 0, pointerEvents: 'none' }}
+        style={{ position: 'absolute', left: '-9999px', top: 0, pointerEvents: 'none', fontFamily: "Raleway" }}
         aria-hidden
       >
         <Poster ref={downloadRef} photo={photo} name={name} title={title} type={type} />
