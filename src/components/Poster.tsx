@@ -14,11 +14,11 @@ export const Poster = forwardRef<HTMLDivElement, IndividualPosterProps>(
       <div className='h-175 w-135 bg-orange text-xl text-left text-white overflow-hidden' ref={ref}>
         <div className="flex px-8 justify-between text-left mb-6 pt-6">
           <div className='text-5xl w-3/5 font-bold'>{type === 'individual' ? "I'll" : "We'll"} be attending</div>
-          <CAIFLogo className='-mt-10'/>
+          <CAIFLogo className='ml-10'/>
         </div>
-        <div className="z-10 flex justify-center">
-          <div className="size-140">
-            <div className='size-full bg-white rounded-full overflow-hidden border-none outline-none'>
+        <div className="z-10 flex justify-center -mt-5">
+          <div className="size-120">
+            <div className='size-full bg-white rounded-full- overflow-hidden border-none outline-none'>
               {photo ? (
                 <img
                   src={photo}
@@ -45,7 +45,9 @@ export const Poster = forwardRef<HTMLDivElement, IndividualPosterProps>(
             </div>
           </div>
         </div>
-        <div className="bg-green h-70 w-135 -mt-65 z-50 relative p-4">
+        <div className="bg-green h-70 w-135 -mt-40 z-50 relative p-4" style={{
+          // backgroundImage:"url('/bg-green')"
+        }}>
           <div className='mb-6'>Find me where ideas are in Motion</div>
           <div className='font-semibold text-4xl'>{name || "John Doe Jonathan"}</div>
           <div>{title || "Founder Electro Co."}</div>

@@ -39,7 +39,8 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 px-5 py-3.5 flex items-center gap-2.5">
-        <div className="w-2.5 h-2.5 rounded-full bg-orange shrink-0" />
+        {/* <div className="w-2.5 h-2.5 rounded-full bg-orange shrink-0" /> */}
+        <img src="/logo.webp" alt="" className='size-8' />
         <span className="font-black text-base text-green tracking-wide">CAIF 2026</span>
         <span className="font-light text-sm text-gray-400">Poster Maker</span>
       </header>

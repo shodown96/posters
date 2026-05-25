@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef } from 'react'
 import Cropper from 'react-easy-crop'
 import type { Area } from 'react-easy-crop'
-import { getCroppedImg } from '@/lib/cropUtils'
+import { getCroppedImgRect } from '@/lib/cropUtils'
 import { Upload, ZoomIn, ZoomOut, Check, X, ImageIcon } from 'lucide-react'
 import { Button } from './ui/button'
 
@@ -54,7 +54,7 @@ export function PhotoUploader({ value, onChange }: PhotoUploaderProps) {
     if (!rawImage || !croppedAreaPixels) return
     setApplying(true)
     try {
-      const cropped = await getCroppedImg(rawImage, croppedAreaPixels)
+      const cropped = await getCroppedImgRect(rawImage, croppedAreaPixels)
       onChange(cropped)
       setRawImage(null)
     } finally {
@@ -88,12 +88,12 @@ export function PhotoUploader({ value, onChange }: PhotoUploaderProps) {
       >
         {value ? (
           <div className="flex items-center gap-4 px-2 py-1 w-full">
-            <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 border-[3px] border-green">
+            <div className="w-20 h-20 rounded-full- overflow-hidden shrink-0 border-[3px] border-green">
               <img src={value} alt="cropped" className="w-full h-full object-cover block" />
             </div>
             <div className="flex-1">
               <p className="font-bold text-[13px] text-gray-900 m-0">Photo selected</p>
-              <p className="font-light text-xs text-gray-500 mt-0.5 mb-0">Circular crop applied</p>
+              {/* <p className="font-light text-xs text-gray-500 mt-0.5 mb-0">Circular crop applied</p> */}
               <button
                 onClick={(e) => { e.stopPropagation(); openFilePicker() }}
                 className="mt-2 flex items-center gap-1 font-semibold text-xs text-green border border-green rounded-md px-2.5 py-0.5 bg-transparent cursor-pointer hover:bg-green/5 transition-colors"
@@ -154,7 +154,7 @@ export function PhotoUploader({ value, onChange }: PhotoUploaderProps) {
                 crop={crop}
                 zoom={zoom}
                 aspect={1}
-                cropShape="round"
+                cropShape="rect"
                 showGrid={false}
                 onCropChange={setCrop}
                 onZoomChange={setZoom}
