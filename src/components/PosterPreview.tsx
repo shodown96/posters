@@ -1,4 +1,4 @@
-import { POSTER_W } from '@/lib/constants'
+import { POSTER_H, POSTER_W } from '@/lib/constants'
 import { toPng } from 'html-to-image'
 import { ArrowLeft, Download, Loader2 } from 'lucide-react'
 import { useRef, useState } from 'react'
@@ -42,6 +42,7 @@ export function PosterPreview({ type, photo, name, title, onBack }: PosterPrevie
   // Scale the visible preview to fit the viewport — JS-computed, must stay inline
   const displayScale = Math.min(0.65, (window.innerWidth - 40) / POSTER_W)
   const displayW = POSTER_W * displayScale
+  const displayH = POSTER_H * displayScale
 
   return (
     <div className="flex flex-col items-center gap-6">
@@ -56,8 +57,8 @@ export function PosterPreview({ type, photo, name, title, onBack }: PosterPrevie
 
       {/* Visible scaled preview — no height restriction, no overflow clip */}
       <div
-        style={{ width: displayW }}
-        className="rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.15),0_4px_16px_rgba(0,0,0,0.1)] h-112 shrink-0 overflow-hidden"
+        style={{ width: displayW, height: displayH }}
+        className="rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.15),0_4px_16px_rgba(0,0,0,0.1)] shrink-0 overflow-hidden"
       >
         <div style={{ transform: `scale(${displayScale})`, transformOrigin: 'top left', lineHeight: 0 }}>
           <Poster photo={photo} name={name} title={title} type={type} />

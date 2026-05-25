@@ -11,13 +11,13 @@ interface IndividualPosterProps {
 export const Poster = forwardRef<HTMLDivElement, IndividualPosterProps>(
   ({ photo, name, title, type = 'individual' }, ref) => {
     return (
-      <div className='h-175 w-135 bg-orange text-xl text-left text-white overflow-hidden' ref={ref}>
-        <div className="flex px-8 justify-between text-left mb-6 pt-6">
+      <div className='h-170 w-135 bg-orange text-xl text-left text-white overflow-hidden' ref={ref}>
+        <div className="flex px-8 justify-between text-left mb-10 pt-6">
           <div className='text-5xl w-3/5 font-bold'>{type === 'individual' ? "I'll" : "We'll"} be attending</div>
-          <CAIFLogo className='ml-10'/>
+          <CAIFLogo className='h-15!' />
         </div>
         <div className="z-10 flex justify-center -mt-5">
-          <div className="size-120">
+          <div className="size-115">
             <div className='size-full bg-white rounded-full- overflow-hidden border-none outline-none'>
               {photo ? (
                 <img
@@ -45,8 +45,8 @@ export const Poster = forwardRef<HTMLDivElement, IndividualPosterProps>(
             </div>
           </div>
         </div>
-        <div className="bg-green h-70 w-135 -mt-40 z-50 relative p-4" style={{
-          // backgroundImage:"url('/bg-green')"
+        <div className="bg-green h-70 w-135 -mt-35 z-50 relative p-4 bg-no-repeat bg-cover bg-center" style={{
+          backgroundImage: "url('/bg-green-textured.png')"
         }}>
           <div className='mb-6'>Find me where ideas are in Motion</div>
           <div className='font-semibold text-4xl'>{name || "John Doe Jonathan"}</div>
